@@ -71,10 +71,6 @@ sudo python3 vuln.py
 
 Feel free to open issues or submit pull requests to improve this tool. Contributions are welcome to enhance functionality, add more tools, or optimize the code.
 
-## License
-
-This project is open-source under the [MIT License](LICENSE).
-
 ## Credits
 
 This tool leverages several open-source security tools. Credits to the respective tool creators:
