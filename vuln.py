@@ -146,14 +146,16 @@ def run_command(command, output_file):
             console.print(Fore.RED + f"{command[0]} not found. Ensure it is installed on your system." + Style.RESET_ALL)
 
 def select_tools():
-    """Allow the user to select which tools they want to run, with GhauRi and Dalfox as 'coming soon'."""
+    """Allow the user to select which tools they want to run, with GhauRi, Dalfox, SQLMap, Admin Page Finder, and Paramspider as 'coming soon'."""
     tools = [
         "Nuclei", "Katana", "Subfinder", "HTTPX", 
         "Naabu",
     ]
     
     coming_soon_tools = [
-        "GhauRi (Coming Soon)", "Dalfox (Coming Soon)"
+        "GhauRi (Coming Soon)", "Dalfox (Coming Soon)",
+        "SQLMap (Coming Soon)", "Admin Page Finder (Coming Soon)", 
+        "Paramspider (Coming Soon)"
     ]
     
     selected_tools = inquirer.checkbox(
@@ -164,37 +166,47 @@ def select_tools():
 
 def run_ghauri(url):
     """Display 'Coming Soon' message for GhauRi."""
-    console.print(Fore.YELLOW + "[*] GhauRi is coming soon but this script already install it for you, so you can still use the tool but separate. Stay tuned!" + Style.RESET_ALL)
+    console.print(Fore.YELLOW + "[*] GhauRi is coming soon but this script already installs it for you, so you can still use the tool separately. Stay tuned!" + Style.RESET_ALL)
 
 def run_dalfox(url):
     """Display 'Coming Soon' message for Dalfox.""" 
-    console.print(Fore.YELLOW + "[*] Dalfox is coming soon but this script already install it for you, so you can still use the tool but separate. Stay tuned!" + Style.RESET_ALL)
+    console.print(Fore.YELLOW + "[*] Dalfox is coming soon but this script already installs it for you, so you can still use the tool separately. Stay tuned!" + Style.RESET_ALL)
+
+def run_sqlmap(url):
+    """Display 'Coming Soon' message for SQLMap."""
+    console.print(Fore.YELLOW + "[*] SQLMap is coming soon but will be integrated shortly. Stay tuned!" + Style.RESET_ALL)
+
+def run_admin_page_finder(url):
+    """Display 'Coming Soon' message for Admin Page Finder."""
+    console.print(Fore.YELLOW + "[*] Admin Page Finder is coming soon. Stay tuned!" + Style.RESET_ALL)
+
+def run_paramspider(url):
+    """Display 'Coming Soon' message for Paramspider."""
+    console.print(Fore.YELLOW + "[*] Paramspider is coming soon. Stay tuned!" + Style.RESET_ALL)
 
 def run_nuclei_scan(url):
     """Run Nuclei scan.""" 
-    command = ["nuclei", "-u", url, "-t", "nuclei-templates"] 
+    command = ["nuclei", "-u", url, "-t", "nuclei-templates"]
     run_command(command, "nuclei_output.txt")
 
 def run_katana_crawl(url):
-    """Run Katana crawl.""" 
-    command = ["katana", "-u", url, "-o", "katana_output.txt"] 
+    """Run Katana crawl."""
+    command = ["katana", "-u", url, "-d", "2"]
     run_command(command, "katana_output.txt")
 
 def run_subfinder(url):
-    """Run Subfinder.""" 
-    ip = get_ip_from_url(url)
-    command = ["subfinder", "-d", url, "-o", "subfinder_output.txt"] 
+    """Run Subfinder."""
+    command = ["subfinder", "-d", url]
     run_command(command, "subfinder_output.txt")
 
 def run_httpx(url):
-    """Run HTTPX.""" 
-    command = ["httpx", "-u", url, "-o", "httpx_output.txt"]
+    """Run HTTPX."""
+    command = ["httpx", "-u", url]
     run_command(command, "httpx_output.txt")
 
 def run_naabu_scan(url):
     """Run Naabu scan."""
-    ip = get_ip_from_url(url)
-    command = ["naabu", "-host", ip, "-o", "naabu_output.txt"]
+    command = ["naabu", "-h", url]
     run_command(command, "naabu_output.txt")
 
 def main():
@@ -227,6 +239,12 @@ def main():
             run_ghauri(url)
         elif tool == "Dalfox (Coming Soon)":
             run_dalfox(url)
+        elif tool == "SQLMap (Coming Soon)":
+            run_sqlmap(url)
+        elif tool == "Admin Page Finder (Coming Soon)":
+            run_admin_page_finder(url)
+        elif tool == "Paramspider (Coming Soon)":
+            run_paramspider(url)
 
 if __name__ == "__main__":
     main()
