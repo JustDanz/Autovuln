@@ -19,8 +19,8 @@ An automated vulnerability scanning tool designed for security testing of web ap
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/auto-vuln-scanner.git
-   cd auto-vuln-scanner
+   https://github.com/JustDanz/Autovuln.git
+   cd Autovuln
    ```
 
 2. **Install Python Dependencies**:
@@ -42,17 +42,21 @@ An automated vulnerability scanning tool designed for security testing of web ap
 ## Usage
 
 1. **Run the Script**:
-   ```bash
-   python3 auto_vuln_scanner.py
+   ```python
+   python3 vuln.py
    ```
+   if it say pemission denied
+  ```
+sudo python3 vuln.py
+```
 
-2. **Select Tools**:
+3. **Select Tools**:
    The script presents an interactive menu where you can select which tools to run.
 
-3. **Enter Target URL**:
+4. **Enter Target URL**:
    Input the target URL to initiate scanning.
 
-4. **Review Output**:
+5. **Review Output**:
    Results are saved in `.txt` files for each tool (e.g., `nuclei_output.txt`).
 
 ## Tool Descriptions
@@ -90,7 +94,7 @@ This tool leverages several open-source security tools. Credits to the respectiv
 Developed by Justdan
 ```
 
-**Note:** Replace `"https://github.com/yourusername/auto-vuln-scanner.git"` with the actual GitHub repository URL once available.
+**Note:** Replace `"https://github.com/JustDanz/Autovuln"` with the actual GitHub repository URL once available.
 
 ```
 Here’s how to add "Coming Soon" tools to your README file:
