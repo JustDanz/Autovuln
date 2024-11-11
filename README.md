@@ -89,11 +89,8 @@ This tool leverages several open-source security tools. Credits to the respectiv
 
 Developed by Justdan
 ```
-
-**Note:** Replace `"https://github.com/JustDanz/Autovuln"` with the actual GitHub repository URL once available.
-
+"https://github.com/JustDanz/Autovuln"
 ```
-Here’s how to add "Coming Soon" tools to your README file:
 
 ---
 
